@@ -1,0 +1,9 @@
+# Which domains traffic should be routed to the specified network interface card.
+domains:
+  - ipecho.io # to check if the routing is successful
+  - chat.openai.com
+  - auth0.openai.com
+  - pay.openai.com
+
+# Specify which network interface card to use as the network gateway.
+network_interface: "WLAN"

@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "shell",
+      "command": "go",
+      "options": {
+        "cwd": "${workspaceFolder}/bin"
+      },
+      "args": ["build", "-ldflags", "-s -w -H windowsgui", "${workspaceFolder}/cmd/DomainEthRouter"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "silent"
+      },
+      "problemMatcher": ["$go"],
+			"dependsOn":["Copy Configs"]
+    },
+		{
+			"label": "Copy Configs",
+			"type": "shell",
+			"command": "cmd",
+			"args": ["/c", "xcopy", "/D", "configs\\*", "bin\\"]
+		}
+  ]
+}
